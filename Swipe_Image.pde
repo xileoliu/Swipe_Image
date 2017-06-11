@@ -42,10 +42,14 @@ void draw()
   background(0);
   frame = (frame) % numFrames;  // Use % to cycle through frames
 
-  translate(400, 400, 0);
+  //pushMatrix();
+  translate(width/2, height/2, 0);
+  //float zoom = map(mouseX, 0, width, 1, 1.05);
+  //scale(zoom);
   rotateX(map(mouseY, 0, height, -PI/90, PI/90));
   rotateY(map(mouseX, 0, width, -PI/90, PI/90));
-  translate(-400, -400, 0);
+  //popMatrix();
+  translate(-width/2, -height/2, 0);
 
   check_swipe(mouseX, mouseY);
   /*
